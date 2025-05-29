@@ -1,0 +1,160 @@
+/* 主题时钟样式 - CSS实现 */
+/* 翻译自: 50projects50days */
+
+/* 导入Google字体 */
+@import url('https://fonts.googleapis.com/css?family=Heebo:300&display=swap');
+
+/* 全局样式重置 */
+* {
+  box-sizing: border-box;
+}
+
+/* CSS自定义属性（变量）定义 - 主题颜色系统 */
+:root {
+  --primary-color: #000;    /* 主色调：黑色（浅色模式） */
+  --secondary-color: #fff;  /* 次要色调：白色（浅色模式） */
+}
+
+/* HTML元素过渡动画 */
+html {
+  transition: all 0.5s ease-in;  /* 主题切换的平滑过渡 */
+}
+
+/* 深色主题的颜色变量重定义 */
+html.dark {
+  --primary-color: #fff;    /* 主色调：白色（深色模式） */
+  --secondary-color: #333;  /* 次要色调：深灰色（深色模式） */
+}
+
+/* 深色主题的背景和文字颜色 */
+html.dark {
+  background-color: #111;           /* 深色背景 */
+  color: var(--primary-color);      /* 浅色文字 */
+}
+
+/* 页面主体样式 */
+body {
+  /* 添加中文字体支持 */
+  font-family: 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Heebo', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;  /* 隐藏滚动条 */
+  margin: 0;
+}
+
+/* 主题切换按钮样式 */
+.toggle {
+  cursor: pointer;
+  background-color: var(--primary-color);  /* 使用主题颜色 */
+  color: var(--secondary-color);           /* 使用主题颜色 */
+  border: 0;
+  border-radius: 4px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 100px;
+}
+
+/* 移除按钮焦点轮廓 */
+.toggle:focus {
+  outline: none;
+}
+
+/* 时钟容器样式 */
+.clock-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* 时钟表盘样式 */
+.clock {
+  position: relative;
+  width: 200px;
+  height: 200px;
+}
+
+/* 时钟指针基础样式 */
+.needle {
+  background-color: var(--primary-color);  /* 使用主题颜色 */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 65px;
+  width: 3px;
+  transform-origin: bottom center;          /* 旋转中心点在底部中央 */
+  transition: all 0.5s ease-in linear;     /* 平滑旋转动画 */
+}
+
+/* 时针样式 */
+.needle.hour {
+  transform: translate(-50%, -100%) rotate(0deg);
+}
+
+/* 分针样式 */
+.needle.minute {
+  transform: translate(-50%, -100%) rotate(0deg);
+  height: 100px;  /* 比时针长 */
+}
+
+/* 秒针样式 */
+.needle.second {
+  transform: translate(-50%, -100%) rotate(0deg);
+  height: 100px;  /* 与分针同长 */
+  background-color: #e74c3c;  /* 红色秒针 */
+}
+
+/* 时钟中心点样式 */
+.center-point {
+  background-color: #e74c3c;  /* 红色中心点 */
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;  /* 圆形 */
+}
+
+/* 中心点内部小圆点（使用伪元素） */
+.center-point::after {
+  content: '';
+  background-color: var(--primary-color);  /* 使用主题颜色 */
+  width: 5px;
+  height: 5px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;  /* 圆形 */
+}
+
+/* 数字时间显示样式 */
+.time {
+  font-size: 60px;
+}
+
+/* 日期显示样式 */
+.date {
+  color: #aaa;              /* 灰色文字 */
+  font-size: 14px;
+  letter-spacing: 0.3px;    /* 字母间距 */
+  text-transform: uppercase; /* 大写字母 */
+}
+
+/* 日期中的圆形数字样式 */
+.date .circle {
+  background-color: var(--primary-color);  /* 使用主题颜色 */
+  color: var(--secondary-color);           /* 使用主题颜色 */
+  border-radius: 50%;                      /* 圆形背景 */
+  height: 18px;
+  width: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 18px;
+  transition: all 0.5s ease-in;           /* 主题切换时的平滑过渡 */
+  font-size: 12px;
+}

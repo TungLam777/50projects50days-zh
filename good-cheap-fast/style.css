@@ -1,0 +1,98 @@
+/* 好便宜快样式 - CSS实现 */
+/* 翻译自: 50projects50days */
+
+/* 导入Google字体 */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* 全局样式重置 */
+* {
+  box-sizing: border-box;
+}
+
+/* 页面主体样式 */
+body {
+  /* 添加中文字体支持 */
+  font-family: 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Roboto', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;  /* 隐藏滚动条 */
+  margin: 0;
+}
+
+/* 开关容器样式 */
+.toggle-container {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+  width: 200px;
+}
+
+/* 隐藏原生复选框 */
+.toggle {
+  visibility: hidden;
+}
+
+/* 自定义开关标签样式 */
+.label {
+  position: relative;
+  background-color: #d0d0d0;  /* 默认灰色背景 */
+  border-radius: 50px;        /* 圆角边框，创建胶囊形状 */
+  cursor: pointer;            /* 鼠标悬停时显示手型光标 */
+  display: inline-block;
+  margin: 0 15px 0;
+  width: 80px;
+  height: 40px;
+}
+
+/* 开关激活状态样式 */
+.toggle:checked + .label {
+  background-color: #8e44ad;  /* 紫色背景表示激活 */
+}
+
+/* 开关滑动球样式 */
+.ball {
+  background: #fff;           /* 白色球体 */
+  height: 34px;
+  width: 34px;
+  border-radius: 50%;         /* 圆形 */
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  align-items: center;
+  justify-content: center;
+  animation: slideOff 0.3s linear forwards;  /* 默认关闭动画 */
+}
+
+/* 开关激活时的球体动画 */
+.toggle:checked + .label .ball {
+  animation: slideOn 0.3s linear forwards;   /* 激活时的滑入动画 */
+}
+
+/* 滑入动画定义（关闭 → 开启） */
+@keyframes slideOn {
+  0% {
+    transform: translateX(0) scale(1);      /* 起始位置：左侧，正常大小 */
+  }
+  50% {
+    transform: translateX(20px) scale(1.2); /* 中间位置：放大效果 */
+  }
+  100% {
+    transform: translateX(40px) scale(1);   /* 结束位置：右侧，正常大小 */
+  }
+}
+
+/* 滑出动画定义（开启 → 关闭） */
+@keyframes slideOff {
+  0% {
+    transform: translateX(40px) scale(1);   /* 起始位置：右侧，正常大小 */
+  }
+  50% {
+    transform: translateX(20px) scale(1.2); /* 中间位置：放大效果 */
+  }
+  100% {
+    transform: translateX(0) scale(1);      /* 结束位置：左侧，正常大小 */
+  }
+}

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+      integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>背景滑块 | 50个项目50天</title>
+    <meta name="description" content="一个优雅的背景滑块组件，支持左右切换背景图片。学习图片轮播、CSS过渡动画和用户交互设计。" />
+    <meta name="keywords" content="背景滑块,图片轮播,CSS动画,前端开发,用户交互,幻灯片" />
+  </head>
+  <body>
+    <div class="slider-container">
+      <!-- 幻灯片1：海滩风景 -->
+      <div
+        class="slide active"
+        style="
+          background-image: url('https://images.unsplash.com/photo-1549880338-65ddcdfd017b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80');
+        "
+      ></div>
+      
+      <!-- 幻灯片2：城市夜景 -->
+      <div
+        class="slide"
+        style="
+          background-image: url('https://images.unsplash.com/photo-1511593358241-7eea1f3c84e5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1934&q=80');
+        "
+      ></div>
+
+      <!-- 幻灯片3：自然风光 -->
+      <div
+        class="slide"
+        style="
+          background-image: url('https://images.unsplash.com/photo-1495467033336-2effd8753d51?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80');
+        "
+      ></div>
+
+      <!-- 幻灯片4：山脉景观 -->
+      <div
+        class="slide"
+        style="
+          background-image: url('https://images.unsplash.com/photo-1522735338363-cc7313be0ae0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2689&q=80');
+        "
+      ></div>
+
+      <!-- 幻灯片5：森林景色 -->
+      <div
+        class="slide"
+        style="
+          background-image: url('https://images.unsplash.com/photo-1559087867-ce4c91325525?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80');
+        "
+      ></div>
+
+      <!-- 左箭头按钮 -->
+      <button class="arrow left-arrow" id="left">
+        <i class="fas fa-arrow-left"></i>
+      </button>
+
+      <!-- 右箭头按钮 -->
+      <button class="arrow right-arrow" id="right">
+        <i class="fas fa-arrow-right"></i>
+      </button>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

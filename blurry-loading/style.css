@@ -1,0 +1,43 @@
+/* 模糊加载效果样式 - CSS实现 */
+/* 翻译自: 50projects50days */
+
+/* 导入Google字体 */
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+
+/* 全局样式重置 */
+* {
+  box-sizing: border-box;
+}
+
+/* 页面主体样式 */
+body {
+  /* 添加中文字体支持 */
+  font-family: 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Ubuntu', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;  /* 隐藏滚动条，确保背景图片不会造成滚动 */
+  margin: 0;
+}
+
+/* 背景图片样式 */
+.bg {
+  /* 设置背景图片：使用Unsplash的高质量图片 */
+  background: url('https://images.unsplash.com/photo-1576161787924-01bb08dad4a4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2104&q=80')
+    no-repeat center center/cover;
+  position: absolute;
+  /* 扩大背景图片尺寸，防止模糊时边缘出现空白 */
+  top: -30px;
+  left: -30px;
+  width: calc(100vw + 60px);   /* 视口宽度 + 60px */
+  height: calc(100vh + 60px);  /* 视口高度 + 60px */
+  z-index: -1;                 /* 置于最底层 */
+  filter: blur(0px);           /* 初始模糊度为0（清晰状态） */
+}
+
+/* 加载进度文字样式 */
+.loading-text {
+  font-size: 50px;
+  color: #fff;                 /* 白色文字，在深色背景上清晰可见 */
+}

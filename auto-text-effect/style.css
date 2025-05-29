@@ -1,0 +1,48 @@
+/* 自动文本效果样式 - CSS实现 */
+/* 翻译自: 50projects50days */
+
+/* 导入Google字体 */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* 全局样式重置 */
+* {
+  box-sizing: border-box;
+}
+
+/* 页面主体样式 */
+body {
+  background-color: darksalmon;  /* 深鲑鱼色背景 */
+  /* 添加中文字体支持 */
+  font-family: 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Roboto', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;  /* 隐藏滚动条 */
+  margin: 0;
+}
+
+/* 控制面板容器样式 */
+div {
+  position: absolute;
+  bottom: 20px;                      /* 距离底部20像素 */
+  background: rgba(0, 0, 0, 0.1);    /* 半透明黑色背景 */
+  padding: 10px 20px;
+  font-size: 18px;
+}
+
+/* 速度输入框样式 */
+input {
+  width: 50px;
+  padding: 5px;
+  font-size: 18px;
+  background-color: darksalmon;  /* 与页面背景色一致 */
+  border: none;                  /* 无边框 */
+  text-align: center;            /* 文字居中 */
+}
+
+/* 输入框聚焦状态样式 */
+input:focus {
+  outline: none;  /* 移除默认聚焦轮廓 */
+}

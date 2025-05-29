@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>音效面板 | 50个项目50天</title>
+    <meta name="description" content="一个有趣的音效面板应用，点击不同按钮播放各种音效。学习HTML5音频API、动态DOM生成和音频控制技术。" />
+    <meta name="keywords" content="音效面板,音频播放,HTML5 Audio,前端开发,JavaScript音频,交互设计" />
+  </head>
+  <body>
+    <!-- 音频元素：预加载各种音效文件 -->
+    <audio id="applause" src="sounds/applause.mp3"></audio>
+    <audio id="boo" src="sounds/boo.mp3"></audio>
+    <audio id="gasp" src="sounds/gasp.mp3"></audio>
+    <audio id="tada" src="sounds/tada.mp3"></audio>
+    <audio id="victory" src="sounds/victory.mp3"></audio>
+    <audio id="wrong" src="sounds/wrong.mp3"></audio>
+
+    <!-- 按钮容器：JavaScript会动态生成按钮 -->
+    <div id="buttons"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

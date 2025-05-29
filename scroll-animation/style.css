@@ -1,0 +1,63 @@
+/* 滚动动画样式 - CSS实现 */
+/* 翻译自: 50projects50days */
+
+/* 导入Google字体 */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* 全局样式重置 */
+* {
+  box-sizing: border-box;
+}
+
+/* 页面主体样式 */
+body {
+  background-color: #efedd6;  /* 温暖的米色背景 */
+  /* 添加中文字体支持 */
+  font-family: 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Roboto', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  overflow-x: hidden;  /* 隐藏水平滚动条，防止动画时出现滚动条 */
+}
+
+/* 主标题样式 */
+h1 {
+  margin: 10px;
+}
+
+/* 内容盒子基础样式 */
+.box {
+  background-color: steelblue;  /* 钢蓝色背景 */
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 400px;
+  height: 200px;
+  margin: 10px;
+  border-radius: 10px;
+  box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.3);  /* 添加阴影效果 */
+  
+  /* 初始状态：向右移动400%（完全隐藏在右侧） */
+  transform: translateX(400%);
+  
+  /* 添加平滑的过渡动画 */
+  transition: transform 0.4s ease;
+}
+
+/* 偶数位置的盒子从左侧滑入 */
+.box:nth-of-type(even) {
+  transform: translateX(-400%);  /* 初始状态：向左移动400%（完全隐藏在左侧） */
+}
+
+/* 显示状态：盒子滑入到正常位置 */
+.box.show {
+  transform: translateX(0);  /* 移动到原始位置（居中显示） */
+}
+
+/* 盒子内标题样式 */
+.box h2 {
+  font-size: 45px;
+}

@@ -1,0 +1,57 @@
+/* 绘图应用样式 - CSS实现 */
+/* 翻译自: 50projects50days */
+
+/* 导入Google字体 */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* 全局样式重置 */
+* {
+  box-sizing: border-box;
+}
+
+/* 页面主体样式 */
+body {
+  background-color: #f5f5f5;  /* 浅灰色背景 */
+  /* 添加中文字体支持 */
+  font-family: 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Roboto', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+}
+
+/* 画布样式 */
+canvas {
+  border: 2px solid steelblue;  /* 钢蓝色边框 */
+}
+
+/* 工具栏容器样式 */
+.toolbox {
+  background-color: steelblue;  /* 钢蓝色背景 */
+  border: 1px solid slateblue;  /* 石板蓝色边框 */
+  display: flex;
+  width: 804px;                 /* 与画布宽度一致（800px + 边框） */
+  padding: 1rem;
+}
+
+/* 工具栏内所有元素的通用样式 */
+.toolbox > * {
+  background-color: #fff;       /* 白色背景 */
+  border: none;                 /* 无边框 */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;              /* 大字体 */
+  height: 50px;
+  width: 50px;
+  margin: 0.25rem;
+  padding: 0.25rem;
+  cursor: pointer;              /* 鼠标悬停时显示手型光标 */
+}
+
+/* 工具栏最后一个元素（清除按钮）右对齐 */
+.toolbox > *:last-child {
+  margin-left: auto;            /* 自动左边距，实现右对齐 */
+}

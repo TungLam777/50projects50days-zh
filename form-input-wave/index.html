@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>表单波浪效果 | 50个项目50天</title>
+    <meta name="description" content="一个优雅的表单波浪动画效果，当用户聚焦输入框时，标签文字会以波浪形式向上移动。学习CSS动画、表单设计和用户体验优化。" />
+    <meta name="keywords" content="表单动画,波浪效果,CSS动画,用户体验,前端开发,表单设计" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>请登录</h1>
+      <form>
+        <div class="form-control">
+          <input type="text" required>
+          <label>邮箱</label>
+          <!-- 注释：JavaScript会将标签文字拆分为单个字符的span元素
+            <label>
+              <span style="transition-delay: 0ms">邮</span>
+              <span style="transition-delay: 50ms">箱</span>
+            </label> -->
+        </div>
+
+        <div class="form-control">
+          <input type="password" required>
+          <label>密码</label>
+        </div>
+
+        <button class="btn">登录</button>
+
+        <p class="text">还没有账户？ <a href="#">立即注册</a> </p>
+      </form>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

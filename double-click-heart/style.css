@@ -1,0 +1,68 @@
+/* 双击爱心样式 - CSS实现 */
+/* 翻译自: 50projects50days */
+
+/* 导入Google字体 */
+@import url('https://fonts.googleapis.com/css?family=Oswald');
+
+/* 全局样式重置 */
+* {
+  box-sizing: border-box;
+}
+
+/* 页面主体样式 */
+body {
+  /* 添加中文字体支持 */
+  font-family: 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Oswald', sans-serif;
+  text-align: center;
+  overflow: hidden;  /* 隐藏滚动条 */
+  margin: 0;
+}
+
+/* 主标题样式 */
+h3 {
+  margin-bottom: 0;
+  text-align: center;
+}
+
+/* 小字提示样式 */
+small {
+  display: block;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* 爱心图标基础样式 */
+.fa-heart {
+  color: red;  /* 红色爱心 */
+}
+
+/* 图片容器样式 */
+.loveMe {
+  height: 440px;
+  width: 300px;
+  /* 背景图片设置 */
+  background: url('https://images.unsplash.com/photo-1504215680853-026ed2a45def?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80')
+    no-repeat center center/cover;
+  margin: auto;
+  cursor: pointer;      /* 鼠标悬停时显示手型光标 */
+  max-width: 100%;      /* 响应式宽度 */
+  position: relative;   /* 相对定位，为爱心图标提供定位基准 */
+  /* 双重阴影效果，增加立体感 */
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  overflow: hidden;     /* 隐藏溢出的动画元素 */
+}
+
+/* 动画爱心图标样式 */
+.loveMe .fa-heart {
+  position: absolute;                           /* 绝对定位 */
+  animation: grow 0.6s linear;                  /* 应用放大动画，0.6秒线性 */
+  transform: translate(-50%, -50%) scale(0);    /* 初始状态：居中且缩放为0 */
+}
+
+/* 爱心放大淡出动画定义 */
+@keyframes grow {
+  to {
+    transform: translate(-50%, -50%) scale(10); /* 最终状态：放大10倍 */
+    opacity: 0;                                 /* 最终状态：完全透明 */
+  }
+}

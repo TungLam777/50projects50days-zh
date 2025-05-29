@@ -1,0 +1,135 @@
+/* 电影应用样式 - CSS实现 */
+/* 翻译自: 50projects50days */
+
+/* 导入Google字体 */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap');
+
+/* CSS自定义属性（变量）定义 */
+:root {
+  --primary-color: #22254b;    /* 主色调：深蓝色 */
+  --secondary-color: #373b69;  /* 次要色调：中蓝色 */
+}
+
+/* 全局样式重置 */
+* {
+  box-sizing: border-box;
+}
+
+/* 页面主体样式 */
+body {
+  background-color: var(--primary-color);
+  /* 添加中文字体支持 */
+  font-family: 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Poppins', sans-serif;
+  margin: 0;
+}
+
+/* 页面头部样式 */
+header {
+  padding: 1rem;
+  display: flex;
+  justify-content: flex-end;  /* 搜索框右对齐 */
+  background-color: var(--secondary-color);
+}
+
+/* 搜索框样式 */
+.search {
+  background-color: transparent;
+  border: 2px solid var(--primary-color);
+  border-radius: 50px;        /* 圆角边框 */
+  font-family: inherit;       /* 继承字体 */
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  color: #fff;
+}
+
+/* 搜索框占位符样式 */
+.search::placeholder {
+  color: #7378c5;             /* 淡紫色占位符文字 */
+}
+
+/* 搜索框聚焦状态样式 */
+.search:focus {
+  outline: none;
+  background-color: var(--primary-color);
+}
+
+/* 主内容区域样式 */
+main {
+  display: flex;
+  flex-wrap: wrap;            /* 允许换行 */
+  justify-content: center;    /* 居中对齐 */
+}
+
+/* 电影卡片基础样式 */
+.movie {
+  width: 300px;
+  margin: 1rem;
+  background-color: var(--secondary-color);
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);  /* 阴影效果 */
+  position: relative;
+  overflow: hidden;           /* 隐藏溢出内容，用于简介滑入效果 */
+  border-radius: 3px;
+}
+
+/* 电影海报图片样式 */
+.movie img {
+  width: 100%;
+}
+
+/* 电影信息区域样式 */
+.movie-info {
+  color: #eee;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;  /* 标题和评分分别左右对齐 */
+  gap: 0.2rem;
+  padding: 0.5rem 1rem 1rem;
+  letter-spacing: 0.5px;           /* 字母间距 */
+}
+
+/* 电影标题样式 */
+.movie-info h3 {
+  margin-top: 0;
+}
+
+/* 评分标签基础样式 */
+.movie-info span {
+  background-color: var(--primary-color);
+  padding: 0.25rem 0.5rem;
+  border-radius: 3px;
+  font-weight: bold;
+}
+
+/* 高分评分样式（8分及以上） */
+.movie-info span.green {
+  color: lightgreen;
+}
+
+/* 中等评分样式（5-8分） */
+.movie-info span.orange {
+  color: orange;
+}
+
+/* 低分评分样式（5分以下） */
+.movie-info span.red {
+  color: red;
+}
+
+/* 电影简介区域样式 */
+.overview {
+  background-color: #fff;
+  padding: 2rem;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  max-height: 100%;
+  transform: translateY(101%);        /* 初始状态：完全隐藏在下方 */
+  overflow-y: auto;                   /* 内容过多时显示滚动条 */
+  transition: transform 0.3s ease-in; /* 平滑的滑入动画 */
+}
+
+/* 鼠标悬停时显示电影简介 */
+.movie:hover .overview {
+  transform: translateY(0);           /* 滑入到正常位置 */
+}

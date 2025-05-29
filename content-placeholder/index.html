@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>内容占位符 | 50个项目50天</title>
+    <meta name="description" content="一个优雅的内容占位符组件，展示骨架屏加载效果。学习CSS渐变动画、内容加载状态和用户体验设计。" />
+    <meta name="keywords" content="内容占位符,骨架屏,加载动画,CSS渐变,前端开发,用户体验" />
+  </head>
+  <body>
+    <!-- 内容卡片容器 -->
+    <div class="card">
+      <!-- 卡片头部图片区域 -->
+      <div class="card-header animated-bg" id="header">&nbsp;</div>
+
+      <!-- 卡片内容区域 -->
+      <div class="card-content">
+        <!-- 文章标题 -->
+        <h3 class="card-title animated-bg animated-bg-text" id="title">
+          &nbsp;
+        </h3>
+        
+        <!-- 文章摘要 -->
+        <p class="card-excerpt" id="excerpt">
+          &nbsp;
+          <span class="animated-bg animated-bg-text">&nbsp;</span>
+          <span class="animated-bg animated-bg-text">&nbsp;</span>
+          <span class="animated-bg animated-bg-text">&nbsp;</span>
+        </p>
+        
+        <!-- 作者信息区域 -->
+        <div class="author">
+          <!-- 作者头像 -->
+          <div class="profile-img animated-bg" id="profile_img">&nbsp;</div>
+          
+          <!-- 作者详细信息 -->
+          <div class="author-info">
+            <strong class="animated-bg animated-bg-text" id="name">&nbsp;</strong>
+            <small class="animated-bg animated-bg-text" id="date">&nbsp;</small>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

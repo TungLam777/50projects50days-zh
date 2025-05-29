@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>绘图应用 | 50个项目50天</title>
+    <meta name="description" content="一个功能完整的绘图应用，支持画笔大小调节、颜色选择和画布清除。学习Canvas API、鼠标事件处理和图形绘制技术。" />
+    <meta name="keywords" content="绘图应用,Canvas绘图,画笔工具,前端开发,图形处理,鼠标绘制" />
+  </head>
+  <body>
+    <!-- 绘图画布 -->
+    <canvas id="canvas" width="800" height="700"></canvas>
+    
+    <!-- 工具栏 -->
+    <div class="toolbox">
+      <!-- 减小画笔按钮 -->
+      <button id="decrease">-</button>
+      <!-- 画笔大小显示 -->
+      <span id="size">10</span>
+      <!-- 增大画笔按钮 -->
+      <button id="increase">+</button>
+      <!-- 颜色选择器 -->
+      <input type="color" id="color">
+      <!-- 清除画布按钮 -->
+      <button id="clear">X</button>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

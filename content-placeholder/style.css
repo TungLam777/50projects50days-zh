@@ -1,0 +1,128 @@
+/* 内容占位符样式 - CSS实现 */
+/* 翻译自: 50projects50days */
+
+/* 导入Google字体 */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* 全局样式重置 */
+* {
+  box-sizing: border-box;
+}
+
+/* 页面主体样式 */
+body {
+  background-color: #ecf0f1;  /* 浅灰色背景 */
+  /* 添加中文字体支持 */
+  font-family: 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Roboto', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;  /* 隐藏滚动条 */
+  margin: 0;
+}
+
+/* 图片响应式样式 */
+img {
+  max-width: 100%;
+}
+
+/* 卡片容器样式 */
+.card {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);  /* 阴影效果 */
+  border-radius: 10px;                         /* 圆角边框 */
+  overflow: hidden;                            /* 隐藏溢出内容 */
+  width: 350px;
+}
+
+/* 卡片头部样式 */
+.card-header {
+  height: 200px;
+}
+
+/* 头部图片样式 */
+.card-header img {
+  object-fit: cover;  /* 保持比例填充 */
+  height: 100%;
+  width: 100%;
+}
+
+/* 卡片内容区域样式 */
+.card-content {
+  background-color: #fff;  /* 白色背景 */
+  padding: 30px;
+}
+
+/* 卡片标题样式 */
+.card-title {
+  height: 20px;
+  margin: 0;
+}
+
+/* 卡片摘要样式 */
+.card-excerpt {
+  color: #777;              /* 灰色文字 */
+  margin: 10px 0 20px;
+}
+
+/* 作者信息容器样式 */
+.author {
+  display: flex;
+}
+
+/* 作者头像样式 */
+.profile-img {
+  border-radius: 50%;       /* 圆形头像 */
+  overflow: hidden;
+  height: 40px;
+  width: 40px;
+}
+
+/* 作者信息文字区域样式 */
+.author-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-left: 10px;
+  width: 100px;
+}
+
+/* 作者信息小字样式 */
+.author-info small {
+  color: #aaa;              /* 浅灰色 */
+  margin-top: 5px;
+}
+
+/* 骨架屏背景动画样式 */
+.animated-bg {
+  /* 线性渐变背景，模拟光泽扫过效果 */
+  background-image: linear-gradient(
+    to right,
+    #f6f7f8 0%,     /* 起始颜色：浅灰 */
+    #edeef1 10%,    /* 中间颜色：稍深灰 */
+    #f6f7f8 20%,    /* 高光颜色：浅灰 */
+    #f6f7f8 100%    /* 结束颜色：浅灰 */
+  );
+  background-size: 200% 100%;           /* 背景尺寸为元素的2倍宽度 */
+  animation: bgPos 1s linear infinite;  /* 应用位置动画，1秒循环 */
+}
+
+/* 骨架屏文本样式 */
+.animated-bg-text {
+  border-radius: 50px;      /* 圆角边框，模拟文本行 */
+  display: inline-block;
+  margin: 0;
+  height: 10px;             /* 文本行高度 */
+  width: 100%;
+}
+
+/* 背景位置动画定义 */
+@keyframes bgPos {
+  0% {
+    background-position: 50% 0;    /* 起始位置：中间 */
+  }
+
+  100% {
+    background-position: -150% 0;  /* 结束位置：左侧外部 */
+  }
+}

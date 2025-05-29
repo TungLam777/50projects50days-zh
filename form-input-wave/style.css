@@ -1,0 +1,124 @@
+/* 表单波浪效果样式 - CSS实现 */
+/* 翻译自: 50projects50days */
+
+/* 导入Google字体 */
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+
+/* 全局样式重置 */
+* {
+  box-sizing: border-box;
+}
+
+/* 页面主体样式 */
+body {
+  background-color: steelblue;  /* 钢蓝色背景 */
+  color: #fff;
+  /* 添加中文字体支持 */
+  font-family: 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Muli', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+
+/* 表单容器样式 */
+.container {
+  background-color: rgba(0, 0, 0, 0.4);  /* 半透明黑色背景 */
+  padding: 20px 40px;
+  border-radius: 5px;
+}
+
+/* 容器内标题样式 */
+.container h1 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* 容器内链接样式 */
+.container a {
+  text-decoration: none;
+  color: lightblue;
+}
+
+/* 按钮基础样式 */
+.btn {
+  cursor: pointer;
+  display: inline-block;
+  width: 100%;
+  background: lightblue;
+  padding: 15px;
+  font-family: inherit;
+  font-size: 16px;
+  border: 0;
+  border-radius: 5px;
+}
+
+/* 移除按钮焦点轮廓 */
+.btn:focus {
+  outline: 0;
+}
+
+/* 按钮点击效果 */
+.btn:active {
+  transform: scale(0.98);  /* 轻微缩放效果 */
+}
+
+/* 底部文字样式 */
+.text {
+  margin-top: 30px;
+}
+
+/* 表单控件容器样式 */
+.form-control {
+  position: relative;
+  margin: 20px 0 40px;
+  width: 300px;
+}
+
+/* 输入框基础样式 */
+.form-control input {
+  background-color: transparent;  /* 透明背景 */
+  border: 0;
+  border-bottom: 2px #fff solid;  /* 只有底部边框 */
+  display: block;
+  width: 100%;
+  padding: 15px 0;
+  font-size: 18px;
+  color: #fff;
+  position: relative;
+  z-index: 100;  /* 确保输入框在标签之上 */
+}
+
+/* 输入框聚焦和有效状态样式 */
+.form-control input:focus,
+.form-control input:valid {
+  outline: 0;
+  border-bottom-color: lightblue;  /* 聚焦时边框变为浅蓝色 */
+}
+
+/* 标签基础样式 */
+.form-control label {
+  position: absolute;
+  top: 15px;
+  left: 0;
+  pointer-events: none;  /* 禁用鼠标事件，允许点击穿透到输入框 */
+}
+
+/* 标签内字符span样式 */
+.form-control label span {
+  display: inline-block;
+  font-size: 18px;
+  min-width: 5px;  /* 确保空格字符也有宽度 */
+  /* 使用cubic-bezier缓动函数创建弹性动画效果 */
+  transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* 输入框聚焦或有内容时的标签动画 */
+.form-control input:focus ~ label span,
+.form-control input:valid ~ label span {
+  color: lightblue;              /* 文字颜色变为浅蓝色 */
+  transform: translateY(-30px);  /* 向上移动30px */
+}

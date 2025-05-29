@@ -1,0 +1,76 @@
+/* 爸爸笑话样式 - CSS实现 */
+/* 翻译自: 50projects50days */
+
+/* 导入Google字体 */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* 全局样式重置 */
+* {
+  box-sizing: border-box;
+}
+
+/* 页面主体样式 */
+body {
+  background-color: #686de0;  /* 紫蓝色渐变背景 */
+  /* 添加中文字体支持 */
+  font-family: 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Roboto', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+  padding: 20px;  /* 添加内边距，防止内容贴边 */
+}
+
+/* 主容器样式 */
+.container {
+  background-color: #fff;
+  border-radius: 10px;
+  /* 多层阴影效果，增加立体感 */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.1);
+  padding: 50px 20px;
+  text-align: center;
+  max-width: 100%;
+  width: 800px;
+}
+
+/* 标题样式 */
+h3 {
+  margin: 0;
+  opacity: 0.5;        /* 半透明效果 */
+  letter-spacing: 2px;  /* 字母间距，增加设计感 */
+}
+
+/* 笑话内容样式 */
+.joke {
+  font-size: 30px;
+  letter-spacing: 1px;  /* 轻微的字母间距 */
+  line-height: 40px;    /* 行高，改善中文阅读体验 */
+  margin: 50px auto;
+  max-width: 600px;     /* 限制最大宽度，保持良好的阅读体验 */
+}
+
+/* 按钮样式 */
+.btn {
+  background-color: #9f68e0;  /* 紫色背景，与页面主题呼应 */
+  color: #fff;
+  border: 0;
+  border-radius: 10px;
+  /* 按钮阴影效果 */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.1);
+  padding: 14px 40px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* 按钮点击效果 */
+.btn:active {
+  transform: scale(0.98);  /* 轻微缩放，提供点击反馈 */
+}
+
+/* 移除按钮焦点轮廓 */
+.btn:focus {
+  outline: 0;
+}

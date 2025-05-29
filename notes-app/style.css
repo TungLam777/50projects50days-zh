@@ -1,0 +1,89 @@
+/* 笔记应用样式 - CSS实现 */
+/* 翻译自: 50projects50days */
+
+/* 导入Google字体 */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap');
+
+/* 全局样式重置 */
+* {
+  box-sizing: border-box;
+  outline: none;  /* 移除默认聚焦轮廓 */
+}
+
+/* 页面主体样式 */
+body {
+  background-color: #7bdaf3;  /* 浅蓝色背景 */
+  /* 添加中文字体支持 */
+  font-family: 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Poppins', sans-serif;
+  display: flex;
+  flex-wrap: wrap;             /* 允许笔记换行排列 */
+  margin: 0;
+  padding-top: 3rem;           /* 为固定按钮留出空间 */
+}
+
+/* 添加笔记按钮样式 */
+.add {
+  position: fixed;             /* 固定定位 */
+  top: 1rem;
+  right: 1rem;
+  background-color: #9ec862;   /* 绿色背景 */
+  color: #fff;                 /* 白色文字 */
+  border: none;
+  border-radius: 3px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;             /* 鼠标悬停时显示手型光标 */
+}
+
+/* 添加按钮激活状态样式 */
+.add:active {
+  transform: scale(0.98);      /* 点击时轻微缩小，提供触觉反馈 */
+}
+
+/* 笔记卡片样式 */
+.note {
+  background-color: #fff;      /* 白色背景 */
+  box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.1);  /* 阴影效果 */
+  margin: 30px 20px;           /* 外边距 */
+  height: 400px;
+  width: 400px;
+  overflow-y: scroll;          /* 内容过多时显示垂直滚动条 */
+}
+
+/* 笔记工具栏样式 */
+.note .tools {
+  background-color: #9ec862;   /* 绿色工具栏背景 */
+  display: flex;
+  justify-content: flex-end;   /* 按钮右对齐 */
+  padding: 0.5rem;
+}
+
+/* 工具栏按钮样式 */
+.note .tools button {
+  background-color: transparent;  /* 透明背景 */
+  border: none;
+  color: #fff;                    /* 白色图标 */
+  cursor: pointer;
+  font-size: 1rem;
+  margin-left: 0.5rem;            /* 按钮间距 */
+}
+
+/* 笔记文本区域样式 */
+.note textarea {
+  outline: none;               /* 移除聚焦轮廓 */
+  font-family: inherit;        /* 继承字体 */
+  font-size: 1.2rem;
+  border: none;
+  height: 400px;
+  width: 100%;
+  padding: 20px;
+}
+
+/* 笔记显示区域样式 */
+.main {
+  padding: 20px;
+}
+
+/* 隐藏状态样式 */
+.hidden {
+  display: none;
+}

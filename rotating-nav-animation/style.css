@@ -1,0 +1,175 @@
+/* 旋转导航动画样式 - CSS实现 */
+/* 翻译自: 50projects50days */
+
+/* 导入Google字体 */
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+
+/* 全局样式重置 */
+* {
+  box-sizing: border-box;
+}
+
+/* 页面主体样式 */
+body {
+  /* 添加中文字体支持 */
+  font-family: 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Lato', sans-serif;
+  background-color: #333;
+  color: #222;
+  overflow-x: hidden;  /* 隐藏水平滚动条，防止旋转时出现滚动条 */
+  margin: 0;
+}
+
+/* 主容器样式 */
+.container {
+  background-color: #fafafa;
+  transform-origin: top left;  /* 设置变换原点为左上角 */
+  transition: transform 0.5s linear;  /* 添加平滑的旋转过渡效果 */
+  width: 100vw;
+  min-height: 100vh;
+  padding: 50px;
+}
+
+/* 显示导航时的容器样式 */
+.container.show-nav {
+  transform: rotate(-20deg);  /* 逆时针旋转20度 */
+}
+
+/* 圆形按钮容器 */
+.circle-container {
+  position: fixed;
+  top: -100px;    /* 部分隐藏在页面顶部 */
+  left: -100px;   /* 部分隐藏在页面左侧 */
+}
+
+/* 圆形按钮基础样式 */
+.circle {
+  background-color: #ff7979;  /* 珊瑚红背景色 */
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  position: relative;
+  transition: transform 0.5s linear;  /* 添加旋转过渡效果 */
+}
+
+/* 显示导航时圆形按钮的旋转 */
+.container.show-nav .circle {
+  transform: rotate(-70deg);  /* 圆形按钮额外旋转-70度 */
+}
+
+/* 圆形内按钮的通用样式 */
+.circle button {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 100px;
+  background: transparent;
+  border: 0;
+  font-size: 26px;
+  color: #fff;
+}
+
+/* 移除按钮焦点轮廓 */
+.circle button:focus {
+  outline: none;
+}
+
+/* 打开按钮的位置 */
+.circle button#open {
+  left: 60%;
+}
+
+/* 关闭按钮的位置和旋转 */
+.circle button#close {
+  top: 60%;
+  transform: rotate(90deg);
+  transform-origin: top left;
+}
+
+/* 显示导航时，导航项的动画效果 */
+.container.show-nav + nav li {
+  transform: translateX(0);    /* 导航项滑入到正常位置 */
+  transition-delay: 0.3s;      /* 延迟0.3秒开始动画 */
+}
+
+/* 导航菜单基础样式 */
+nav {
+  position: fixed;
+  bottom: 40px;
+  left: 0;
+  z-index: 100;
+}
+
+/* 导航列表样式 */
+nav ul {
+  list-style-type: none;
+  padding-left: 30px;
+}
+
+/* 导航项基础样式 */
+nav ul li {
+  text-transform: uppercase;   /* 文字转为大写 */
+  color: #fff;
+  margin: 40px 0;
+  transform: translateX(-100%);  /* 初始状态：完全向左隐藏 */
+  transition: transform 0.4s ease-in;  /* 滑动过渡效果 */
+}
+
+/* 导航图标样式 */
+nav ul li i {
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+/* 第二个导航项的偏移 */
+nav ul li + li {
+  margin-left: 15px;
+  transform: translateX(-150%);  /* 更深的隐藏位置 */
+}
+
+/* 第三个导航项的偏移 */
+nav ul li + li + li {
+  margin-left: 30px;
+  transform: translateX(-200%);  /* 最深的隐藏位置 */
+}
+
+/* 导航链接样式 */
+nav a {
+  color: #fafafa;
+  text-decoration: none;
+  transition: all 0.5s;
+}
+
+/* 导航链接悬停效果 */
+nav a:hover {
+  color: #FF7979;
+  font-weight: bold;
+}
+
+/* 内容区域图片样式 */
+.content img {
+  max-width: 100%;
+}
+
+/* 内容区域基础样式 */
+.content {
+  max-width: 1000px;
+  margin: 50px auto;
+}
+
+/* 内容标题样式 */
+.content h1 {
+  margin: 0;
+}
+
+/* 作者信息样式 */
+.content small {
+  color: #555;
+  font-style: italic;
+}
+
+/* 段落文字样式 */
+.content p {
+  color: #333;
+  line-height: 1.5;  /* 提高行高，改善中文阅读体验 */
+}

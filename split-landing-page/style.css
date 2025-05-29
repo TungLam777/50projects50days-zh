@@ -1,0 +1,161 @@
+/* 分屏着陆页样式 - CSS实现 */
+/* 翻译自: 50projects50days */
+
+/* 导入Google字体 */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* CSS自定义属性（变量）定义 */
+:root {
+  --left-bg-color: rgba(87, 84, 236, 0.7);      /* 左侧背景叠加色（紫色半透明） */
+  --right-bg-color: rgba(43, 43, 43, 0.8);      /* 右侧背景叠加色（深灰半透明） */
+  --left-btn-hover-color: rgba(87, 84, 236, 1);  /* 左侧按钮悬停色（紫色） */
+  --right-btn-hover-color: rgba(28, 122, 28, 1); /* 右侧按钮悬停色（绿色） */
+  --hover-width: 75%;                            /* 悬停时扩展宽度 */
+  --other-width: 25%;                            /* 悬停时收缩宽度 */
+  --speed: 1000ms;                               /* 动画持续时间 */
+}
+
+/* 全局样式重置 */
+* {
+  box-sizing: border-box;
+}
+
+/* 页面主体样式 */
+body {
+  /* 添加中文字体支持 */
+  font-family: 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Roboto', sans-serif;
+  height: 100vh;
+  overflow: hidden;  /* 隐藏滚动条，确保全屏显示 */
+  margin: 0;
+}
+
+/* 主标题样式 */
+h1 {
+  font-size: 4rem;
+  color: #fff;
+  position: absolute;
+  left: 50%;
+  top: 20%;
+  transform: translateX(-50%);  /* 水平居中 */
+  white-space: nowrap;          /* 防止文字换行 */
+}
+
+/* 按钮基础样式 */
+.btn {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 50%;
+  top: 40%;
+  transform: translateX(-50%);  /* 水平居中 */
+  text-decoration: none;
+  color: #fff;
+  border: #fff solid 0.2rem;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  width: 15rem;
+  padding: 1.5rem;
+}
+
+/* 左侧按钮悬停效果 */
+.split.left .btn:hover {
+  background-color: var(--left-btn-hover-color);
+  border-color: var(--left-btn-hover-color);
+}
+
+/* 右侧按钮悬停效果 */
+.split.right .btn:hover {
+  background-color: var(--right-btn-hover-color);
+  border-color: var(--right-btn-hover-color);
+}
+
+/* 主容器样式 */
+.container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #333;
+}
+
+/* 分屏基础样式 */
+.split {
+  position: absolute;
+  width: 50%;           /* 默认各占50%宽度 */
+  height: 100%;
+  overflow: hidden;     /* 隐藏溢出内容 */
+}
+
+/* 左侧分屏样式 */
+.split.left {
+  left: 0;
+  background: url('ps.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* 左侧分屏叠加层（使用伪元素） */
+.split.left::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: var(--left-bg-color);
+}
+
+/* 右侧分屏样式 */
+.split.right {
+  right: 0;
+  background: url('xbox.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* 右侧分屏叠加层（使用伪元素） */
+.split.right::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: var(--right-bg-color);
+}
+
+/* 为所有分屏元素添加过渡动画 */
+.split.right,
+.split.left,
+.split.right::before,
+.split.left::before {
+  transition: all var(--speed) ease-in-out;
+}
+
+/* 悬停左侧时的宽度变化 */
+.hover-left .left {
+  width: var(--hover-width);  /* 左侧扩展到75% */
+}
+
+.hover-left .right {
+  width: var(--other-width);  /* 右侧收缩到25% */
+}
+
+/* 悬停右侧时的宽度变化 */
+.hover-right .right {
+  width: var(--hover-width);  /* 右侧扩展到75% */
+}
+
+.hover-right .left {
+  width: var(--other-width);  /* 左侧收缩到25% */
+}
+
+/* 移动端响应式设计 */
+@media (max-width: 800px) {
+  h1 {
+    font-size: 2rem;  /* 减小字体大小 */
+    top: 30%;         /* 调整垂直位置 */
+  }
+
+  .btn {
+    padding: 1.2rem;  /* 减小按钮内边距 */
+    width: 12rem;     /* 减小按钮宽度 */
+  }
+}

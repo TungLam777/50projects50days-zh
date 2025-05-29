@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="style.css" />
+    <title>密码生成器 | 50个项目50天</title>
+    <meta name="description" content="一个功能强大的密码生成器，支持自定义长度和字符类型。学习随机数生成、字符编码和安全密码创建。" />
+    <meta name="keywords" content="密码生成器,随机密码,安全工具,字符编码,前端开发,密码安全" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- 应用标题 -->
+      <h2>密码生成器</h2>
+      
+      <!-- 密码结果显示区域 -->
+      <div class="result-container">
+        <span id="result"></span>
+        <!-- 复制到剪贴板按钮 -->
+        <button class="btn" id="clipboard">
+          <i class="far fa-clipboard"></i>
+        </button>
+      </div>
+      
+      <!-- 密码设置选项 -->
+      <div class="settings">
+        <!-- 密码长度设置 -->
+        <div class="setting">
+          <label>密码长度</label>
+          <input type="number" id="length" min="4" max="20" value="20">
+        </div>
+        
+        <!-- 包含大写字母选项 -->
+        <div class="setting">
+          <label>包含大写字母</label>
+          <input type="checkbox" id="uppercase" checked>
+        </div>
+        
+        <!-- 包含小写字母选项 -->
+        <div class="setting">
+          <label>包含小写字母</label>
+          <input type="checkbox" id="lowercase" checked>
+        </div>
+        
+        <!-- 包含数字选项 -->
+        <div class="setting">
+          <label>包含数字</label>
+          <input type="checkbox" id="numbers" checked>
+        </div>
+        
+        <!-- 包含符号选项 -->
+        <div class="setting">
+          <label>包含符号</label>
+          <input type="checkbox" id="symbols" checked>
+        </div>
+      </div>
+
+      <!-- 生成密码按钮 -->
+      <button class="btn btn-large" id="generate">
+        生成密码
+      </button>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

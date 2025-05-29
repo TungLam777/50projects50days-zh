@@ -1,0 +1,61 @@
+/* 拖拽功能样式 - CSS实现 */
+/* 翻译自: 50projects50days */
+
+/* 全局样式重置 */
+* {
+  box-sizing: border-box;
+}
+
+/* 页面主体样式 */
+body {
+  background-color: steelblue;  /* 钢蓝色背景 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;  /* 隐藏滚动条 */
+  margin: 0;
+  /* 添加中文字体支持 */
+  font-family: 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+}
+
+/* 空容器样式 */
+.empty {
+  height: 150px;
+  width: 150px;
+  margin: 10px;
+  border: solid 3px black;  /* 黑色实线边框 */
+  background: white;        /* 白色背景 */
+}
+
+/* 可拖拽元素样式 */
+.fill {
+  background-image: url('https://source.unsplash.com/random/150x150');  /* 随机图片背景 */
+  height: 145px;   /* 比容器稍小，留出边框空间 */
+  width: 145px;
+  cursor: pointer; /* 鼠标悬停时显示手型光标 */
+}
+
+/* 拖拽时的样式（抓取状态） */
+.hold {
+  border: solid 5px #ccc;  /* 灰色粗边框，表示被抓取 */
+}
+
+/* 拖拽悬停时容器的样式 */
+.hovered {
+  background-color: #333;   /* 深灰色背景 */
+  border-color: white;      /* 白色边框 */
+  border-style: dashed;     /* 虚线边框，表示可放置 */
+}
+
+/* 隐藏状态样式（拖拽过程中隐藏原始元素） */
+.invisible {
+  display: none;
+}
+
+/* 响应式设计：小屏幕时垂直排列 */
+@media (max-width: 800px) {
+  body {
+    flex-direction: column;  /* 垂直排列容器 */
+  }
+}
